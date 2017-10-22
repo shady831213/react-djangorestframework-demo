@@ -1,0 +1,52 @@
+This Project is to learn React+Django_rest_framework.
+
+Pkgs & Frameworks:
+frontend:
+react-create-app, mobx, material-ui, whatwg_fetch, mobx-react, mobx-react-devtool...
+backend:
+djangorestframework_simplejwt...
+
+Purpose:
+React+Django_rest_framework workflow.
+Unittest for django and react
+
+Run:
+backend:
+python3 manage.py runserver
+
+Dev:
+backend:
+python3 manage.py runserver
+frontend:
+cd frontEnd/react
+npm start
+
+test:
+backend:
+python3 manage.py test
+frontend:
+cd frontEnd/react
+npm run test
+
+build:
+frontend:
+cd frontEnd/react
+npm run build
+
+TroubleShooting:
+1.Support decorator:
+    npm i --save-dev babel-plugin-transform-decorators-legacy
+    modify frontEnd/react/node_modules/babel-preset-react-app/index.js, add :
+        require.resolve('babel-plugin-transform-decorators-legacy')
+
+2.Configure Django project for react frontend:
+    modify settings.py:
+        TEMPLATES = [
+                {
+       ...
+        'DIRS': [REACT_BUILD],
+       ...}]
+
+       STATICFILES_DIRS = (
+            os.path.join(REACT_BUILD, 'static'),
+        )
