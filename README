@@ -10,10 +10,6 @@ Purpose:
 React+Django_rest_framework workflow.
 Unittest for django and react
 
-Run:
-backend:
-python3 manage.py runserver
-
 Dev:
 backend:
 python3 manage.py runserver
