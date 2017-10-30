@@ -17,15 +17,15 @@ class LoginTests(APITestCase):
 
     #helper function
     def getResponse(self, data):
-        return self.client.post(self.url, data, format='json')
+        return self.client.post(self.url, data, secure=True, format='json')
 
     def getTokenPair(self):
-        response = self.client.post('/api/token/',{'username': self.user.username, 'password':'password123'},format='json')
+        response = self.client.post('/api/token/',{'username': self.user.username, 'password':'password123'},secure=True, format='json')
         return response.data
 
 
     def refreshToken(self):
-        response = self.client.post('/api/token/refresh/',{'refresh': self.tokens['refresh']},format='json')
+        response = self.client.post('/api/token/refresh/',{'refresh': self.tokens['refresh']},secure=True, format='json')
         return response.data
 
     def test_login(self):
@@ -55,7 +55,7 @@ class LoginTests(APITestCase):
         """
         passwordError
         """
-        response = self.client.post('/login/api', self.data, format='json')
+        response = self.client.post('/login/api', self.data, secure=True, format='json')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_wronge_token(self):
