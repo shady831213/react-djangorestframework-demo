@@ -11,7 +11,7 @@ coreschema==0.0.4
 cryptography==1.2.3
 decorator==4.1.2
 defer==1.0.6
-Django==1.11.5
+Django==1.11.29
 django-crispy-forms==1.6.1
 django-filter==1.0.4
 django-guardian==1.4.9
