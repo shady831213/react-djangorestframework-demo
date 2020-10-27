@@ -8,7 +8,7 @@ checkbox-support==0.22
 command-not-found==0.3
 coreapi==2.3.1
 coreschema==0.0.4
-cryptography==1.2.3
+cryptography==3.2
 decorator==4.1.2
 defer==1.0.6
 Django==1.11.5
